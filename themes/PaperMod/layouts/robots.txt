@@ -1,0 +1,11 @@
+User-agent: *
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+# Disallowed Sub-Directories
+Disallow: /page/
+Disallow: /categories/
+Disallow: /tags/
+
+{{- else }}
+Disallow: /
+{{- end }}
+#Sitemap: {{ "sitemap.xml" | absURL }}
